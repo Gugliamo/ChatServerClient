@@ -2,10 +2,15 @@
 A project written in C including a multi-user chat server and client.
 
 The chat server and client were written completey in C in a linux CLI environment.
+
 The server uses a TCP connection and supports 20 concurrent users. Four commands are supported, including login, logout, list and private.
+
 Login command is able to change the name of the current user in the user list with the name specified (ex. login DifferentUsername).
+
 Logout command disconnects a client from the server and turns off the program.
+
 List will list all current users on the server.
+
 Private allows for private messages to a specific user (ex. private DifferentUsername hello there =] ).
 
 Although there is a supplied client program, telnet connection to the server is supported for demonstration purposes. 
