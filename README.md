@@ -14,6 +14,7 @@ Semaphores are used throughout the server program as this is a multi-client, mul
 
 
 Further side-notes and testing:
+
 I tried to implement a function (threadCheck()) that checks for unused threads to reclaim them with pthread_join. I placed the call to this function in the beginning of my main accept loop to check over available threads and if they are still being used with a combination of status flags and pthread_kill checks. It seems to work the majority of the time, but once in a while something triggers a bug and my program quits. I wanted to implement this function to continuously run in the program to reclaim unused threads as soon as a user leaves, but I already spent too much time on this extra function. = P
 
 I added a few extra members to the structure which keeps track of users in my program. The extra members are fd, threadID and status. fd holds the file descriptor the program uses to communicate with the user, and threadID holds the thread ID the user is running on in the program. Both of these members are used in my function to keep track of who is who when I’m passing information between various functions. Finally, I added status as a member to my struct in an attempt to keep track of the thread status for each of the user’s threads. The plan was to have the status as 0 when the user’s thread is not initialiazed, 1 when the thread is in use, and 2 for when the thread is ready to be recycled using pthread_join(). 
