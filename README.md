@@ -13,7 +13,7 @@ List will list all current users on the server.
 
 Private allows for private messages to a specific user (ex. private DifferentUsername hello there =] ).
 
-Although there is a supplied client program, telnet connection to the server is supported for demonstration purposes. 
+Although there is a supplied client program, telnet and SSH connections to the server is supported for demonstration purposes. 
 Semaphores are used throughout the server program as this is a multi-client, multi-threaded program.
 
 
